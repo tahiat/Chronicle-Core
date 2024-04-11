@@ -1,0 +1,22 @@
+apply plugin: 'base'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    toCopy
+}
+
+dependencies {
+    toCopy org.checkerframework.checker.qual
+    toCopy net.openhft.affinity
+    toCopy net.openhft.posix
+    toCopy net.openhft.chronicle.analytics
+    toCopy org.slf4j.slf4j.api
+}
+
+task download(type: Copy) {
+    from configurations.toCopy 
+    into 'libs'
+}
