@@ -9,14 +9,13 @@ configurations {
 }
 
 dependencies {
-    toCopy org.checkerframework.checker.qual
-    toCopy net.openhft.affinity
-    toCopy net.openhft.posix
-    toCopy net.openhft.chronicle.analytics
-    toCopy org.slf4j.slf4j.api
+    toCopy 'org.checkerframework:checker-qual:3.40.0'
+    toCopy 'net.openhft:affinity:3.23.3'
+    toCopy 'net.openhft:posix:2.25ea0'
+    toCopy 'org.slf4j:slf4j-api:2.0.12'
 }
 
-task download(type: Copy) {
+task pullJar(type: Copy) {
     from configurations.toCopy 
     into 'libs'
 }
